@@ -8,6 +8,7 @@ import sveltePreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
+
 export default {
   input: 'src/main.js',
   output: {
@@ -54,7 +55,9 @@ function serve() {
           stdio: ['ignore', 'inherit', 'inherit'],
           shell: true,
         });
-        open('http://localhost:8000');
+        app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
+          console.log("Server is running.");
+        });
       }
     },
   };
