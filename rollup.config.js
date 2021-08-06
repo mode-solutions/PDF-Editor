@@ -55,9 +55,7 @@ function serve() {
           stdio: ['ignore', 'inherit', 'inherit'],
           shell: true,
         });
-        app.listen(process.env.PORT || 3001, '0.0.0.0', () => {
-          console.log("Server is running.");
-        });
+        open('http://localhost:5000');
       }
     },
   };
